@@ -1,0 +1,8 @@
+.home {
+    flex:4;
+}
+
+.homeWidgets {
+    display:flex;
+    padding:20px;
+}
