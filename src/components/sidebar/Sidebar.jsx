@@ -14,6 +14,7 @@ import {
     WorkOutline,
     Report,
   } from "@material-ui/icons";
+import {  NavLink } from 'react-router-dom';
 
 function Sidebar() {
   return (
@@ -22,10 +23,12 @@ function Sidebar() {
         <div className="sidebarMenu">
             <h3 className="sidebarTitle">Dashbord</h3>
             <ul className="sidebarList">
-                <li className="sidebarListItem active">
+              <NavLink to={'/'} className={({isActive}) => isActive ? 'link active' : 'link'}>
+                <li className="sidebarListItem">
                     <LineStyle className='sidebarIcon'/>
                     Home
                 </li>
+              </NavLink>
                 <li className="sidebarListItem">
                     <Timeline className='sidebarIcon'/>
                     Analytics
@@ -39,16 +42,18 @@ function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-           
+            <NavLink to="/users" className={({isActive}) => isActive ? 'link active' : 'link'}>
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Users
               </li>
-        
+            </NavLink>
+            <NavLink to="/products" className={({isActive}) => isActive ? 'link active' : 'link'}>
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
                 Products
               </li>
+            </NavLink>
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
               Transactions
